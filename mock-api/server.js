@@ -2556,6 +2556,17 @@ rest_server.post(EMSESP_BOARDPROFILE_ENDPOINT, (req, res) => {
     data.eth_power = 0;
     data.eth_phy_addr = 0;
     data.eth_clock_mode = 0;
+  } else if (board_profile == 'ESP32CAM') {
+    // ESP32-CAM
+    data.led_gpio = 33
+    data.dallas_gpio = 0
+    data.rx_gpio = 13
+    data.tx_gpio = 12
+    data.pbutton_gpio = 0
+    data.phy_type = 0
+    data.eth_power = 0
+    data.eth_phy_addr = 0
+    data.eth_clock_mode = 0
   }
 
   console.log('boardProfile POST. Sending back, profile: ' + board_profile + ', ' + 'data: ' + JSON.stringify(data));
